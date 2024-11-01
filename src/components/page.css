@@ -1,8 +1,11 @@
 .detail {
-    width: 100%;
+    width: 85%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-y: scroll;
+    background-color: #f2f2f2;
 }
 .detail > * {
     width: 80%;
@@ -11,6 +14,11 @@
     height: 35rem;
     border-radius: 0.8rem;
     aspect-ratio: 16/9;
+}
+.hero > img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.8rem;
 }
 .context-main {
     display: none;
@@ -22,10 +30,62 @@
     justify-content: center;
     align-items: center;
 }
+.caption {
+    width: 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+    font-weight: 600;
+    color: #676767;
+}
+.tags {
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #898989;
+    padding-top: 1.5rem;
+}
+.tags > p {
+    margin: 0;
+}
+h2 {
+    margin: 0;
+    font-size: 2.3rem;
+    padding-bottom: 2rem;
+}
 .context-container {
-    width: 20rem;
-    height: 10rem;
-    background-color: #c20d0d;
+    width: 18rem;
+    height: 8rem;
+    background-color: rgba(67,67,67,0.6);
+    backdrop-filter: blur(20px);
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    color: #f9f9f9;
+    overflow: hidden;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.options > * {
+    text-align: center;
+    background-color: rgba(96,96,96, 0.6);
+    backdrop-filter: blur(20px);
+    width: 100%;
+    padding-block: 0.5rem;
+    color: #4597F5;
+    font-weight: 500;
+    border-top: 1px solid #f9f9f971;
+    cursor: pointer;
+}
+.options > :nth-child(2) {
+    color: #E22C2C;    
 }
 .shown {
     display: flex;

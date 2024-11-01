@@ -97,60 +97,62 @@ export default function NewPage() {
     };
 
     return (
-        <div className="new-container">
-            <div className="title-container">
-                <h2>{isEdit ? "Edit SCP" : "Create your New SCP"}</h2>    
-            </div>
-            <div className="basic-details">
-                <h3>Basic Details</h3>
-                <div className="details-container">
+        <div className="create-wrapper">
+            <div className="new-container">
+                <div className="title-container">
+                    <h2>{isEdit ? "Edit SCP" : "Create your New SCP"}</h2>    
+                </div>
+                <div className="basic-details">
+                    <h3>Basic Details</h3>
+                    <div className="details-container">
+                        <input 
+                            type="text" 
+                            className="scp input" 
+                            value={scpItem} 
+                            onChange={(e) => setScpItem(e.target.value)} 
+                            placeholder="SCP Item Number"
+                            disabled={isEdit}
+                        />
+                        <input 
+                            type="text" 
+                            className="new-name input" 
+                            value={scpName} 
+                            onChange={(e) => setScpName(e.target.value)} 
+                            placeholder="Name"
+                        />
+                    </div>
+                </div>
+                <div className="class">
+                    <h3>Class</h3>
                     <input 
                         type="text" 
-                        className="scp input" 
-                        value={scpItem} 
-                        onChange={(e) => setScpItem(e.target.value)} 
-                        placeholder="SCP Item Number"
-                        disabled={isEdit}
-                    />
-                    <input 
-                        type="text" 
-                        className="new-name input" 
-                        value={scpName} 
-                        onChange={(e) => setScpName(e.target.value)} 
-                        placeholder="Name"
+                        className="safe input wide" 
+                        value={scpClass} 
+                        onChange={(e) => setScpClass(e.target.value)} 
+                        placeholder="Class"
                     />
                 </div>
-            </div>
-            <div className="class">
-                <h3>Class</h3>
-                <input 
-                    type="text" 
-                    className="safe input" 
-                    value={scpClass} 
-                    onChange={(e) => setScpClass(e.target.value)} 
-                    placeholder="Class"
-                />
-            </div>
-            <div className="information">
-                <h3>Information</h3>
-                <div className="information-container">
-                    <textarea 
-                        className="desc long input" 
-                        value={containmentInfo}
-                        onChange={(e) => setContainmentInfo(e.target.value)} 
-                        placeholder="Special Containment Procedures"
-                    />
-                    <textarea 
-                        className="desc long input" 
-                        value={description} 
-                        onChange={(e) => setDescription(e.target.value)} 
-                        placeholder="Description"
-                    />
+                <div className="information">
+                    <h3>Information</h3>
+                    <div className="information-container">
+                        <textarea 
+                            className="desc long input" 
+                            value={containmentInfo}
+                            onChange={(e) => setContainmentInfo(e.target.value)} 
+                            placeholder="Special Containment Procedures"
+                        />
+                        <textarea 
+                            className="desc long input" 
+                            value={description} 
+                            onChange={(e) => setDescription(e.target.value)} 
+                            placeholder="Description"
+                        />
+                    </div>
                 </div>
+                <button className="new" onClick={handleSubmit}>
+                    {isEdit ? "Update SCP" : "Create SCP"}
+                </button>
             </div>
-            <button className="new" onClick={handleSubmit}>
-                {isEdit ? "Update SCP" : "Create SCP"}
-            </button>
         </div>
     );
 }
