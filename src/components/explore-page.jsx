@@ -53,7 +53,9 @@ export default function Explore() {
                     <div className="main-container">
                         {item.slice().reverse().map((e, i) => (    
                             <div className="container" key={e.id} onClick={() => SEND_USER(e.item)}>
-                                <div className="img"></div>
+                                <div className="img">
+                                    {e.image ? <img src={e.image} alt="img" /> : "No img"}
+                                </div>
                                 <div className="text-container">
                                     <p className="name">{e.name}</p>
                                     <div className="inf-container">
